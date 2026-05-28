@@ -11,7 +11,7 @@ function getStripe() {
 }
 
 export async function POST(req: NextRequest) {
-  const { plan, giftAid } = await req.json();
+  const { plan } = await req.json();
 
   if (plan !== "monthly" && plan !== "annual") {
     return NextResponse.json({ error: "Invalid plan" }, { status: 400 });
@@ -40,10 +40,7 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    metadata: {
-      plan,
-      giftAid: giftAid ? "true" : "false",
-    },
+    metadata: { plan },
     success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/#join`,
   });

@@ -6,7 +6,7 @@ type Plan = "monthly" | "annual";
 
 export default function JoinSection() {
   const [plan, setPlan] = useState<Plan>("monthly");
-  const [giftAid, setGiftAid] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,7 +17,7 @@ export default function JoinSection() {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, giftAid }),
+        body: JSON.stringify({ plan }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
@@ -70,38 +70,6 @@ export default function JoinSection() {
               <p className="text-white/50 text-xs mt-1">one payment · full year</p>
             </button>
           </div>
-
-          {/* Gift Aid */}
-          <label className="flex items-start gap-3 cursor-pointer group">
-            <div className="relative mt-0.5 flex-shrink-0">
-              <input
-                type="checkbox"
-                checked={giftAid}
-                onChange={(e) => setGiftAid(e.target.checked)}
-                className="sr-only"
-              />
-              <div
-                className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
-                  giftAid ? "bg-gold border-gold" : "border-white/40 group-hover:border-gold/60"
-                }`}
-              >
-                {giftAid && (
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 6l3 3 5-5" stroke="#0d1b4b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </div>
-            </div>
-            <div>
-              <p className="text-white font-medium text-sm sm:text-base">Claim Gift Aid</p>
-              <p className="text-white/50 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital
-                Gains Tax than the amount of Gift Aid claimed on all my donations, it is my
-                responsibility to pay any difference. Gift Aid lets the club reclaim 25p for every
-                £1 donated at no extra cost to you.
-              </p>
-            </div>
-          </label>
 
           {/* CTA */}
           {error && (
