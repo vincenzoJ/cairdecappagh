@@ -310,7 +310,7 @@ section { position: relative; }
 .standing-row span:first-child { color: var(--muted); }
 .standing-row span:last-child { font-weight: 600; color: var(--navy-900); }
 
-@media (max-width: 880px) { .donate-grid { grid-template-columns: 1fr; gap: 34px; } }
+@media (max-width: 880px) { .donate-grid { grid-template-columns: 1fr; gap: 34px; } .checkout { order: -1; } }
 @media (max-width: 520px) {
   .checkout { padding: 22px 18px; }
   .plan-toggle { grid-template-columns: 1fr; }
