@@ -6,7 +6,7 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="#hero" className="flex items-center gap-3 min-w-0">
-          <Image src="/cc.jpeg" alt="Cairde Cappagh" width={36} height={36} className="rounded-full flex-shrink-0" />
+          <Image src="/cc-removebg-preview.png" alt="Cairde Cappagh" width={36} height={36} className="flex-shrink-0" />
           <span className="font-serif font-bold text-gold text-lg hidden sm:block truncate">Cairde Cappagh</span>
         </Link>
         <div className="flex items-center gap-3 sm:gap-6 text-sm font-medium text-white/80">

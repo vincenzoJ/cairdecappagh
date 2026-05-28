@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SuccessPage() {
   return (
     <main className="min-h-screen bg-navy flex flex-col items-center justify-center px-6 text-center">
-      <Image src="/cc.jpeg" alt="Cairde Cappagh" width={120} height={144} className="mb-8" />
+      <Image src="/cc-removebg-preview.png" alt="Cairde Cappagh" width={120} height={144} className="mb-8" />
       <div className="w-16 h-16 bg-gold/20 border-2 border-gold rounded-full flex items-center justify-center mb-6">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a52a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 6L9 17l-5-5" />

@@ -7,13 +7,9 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center text-center bg-navy overflow-hidden"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: "url('/pitch-bg.jpg')" }}
-      />
       <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8 px-6 py-24 w-full max-w-2xl mx-auto">
         <Image
-          src="/cc.jpeg"
+          src="/cc-removebg-preview.png"
           alt="Cairde Cappagh — Friends of Cappagh"
           width={160}
           height={192}
