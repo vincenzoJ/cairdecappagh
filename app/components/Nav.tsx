@@ -1,26 +1,35 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 30);
+    on();
+    window.addEventListener("scroll", on);
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="#hero" className="flex items-center gap-3 min-w-0">
-          <Image src="/cc-removebg-preview.png" alt="Cairde Cappagh" width={36} height={36} className="flex-shrink-0" />
-          <span className="font-serif font-bold text-gold text-lg hidden sm:block truncate">Cairde Cappagh</span>
-        </Link>
-        <div className="flex items-center gap-3 sm:gap-6 text-sm font-medium text-white/80">
-          <Link href="#about" className="hover:text-gold transition-colors hidden sm:block">About</Link>
-          <Link href="#what-we-do" className="hover:text-gold transition-colors hidden md:block">What We Do</Link>
-          <Link href="#faq" className="hover:text-gold transition-colors hidden sm:block">FAQ</Link>
-          <Link
-            href="#join"
-            className="bg-gold text-navy px-4 py-2 rounded-full font-semibold hover:bg-gold-light transition-colors whitespace-nowrap"
-          >
-            Join Now
-          </Link>
-        </div>
+    <nav className={`nav${scrolled ? " scrolled" : ""}`}>
+      <a href="#top" className="nav-brand">
+        <Image src="/cc-shield.png" alt="Cairde Cappagh" width={46} height={46} style={{ height: 46, width: "auto" }} />
+        <span className="bn">
+          <b>CAIRDE CAPPAGH</b>
+          <span>Friends of Cappagh</span>
+        </span>
+      </a>
+      <div className="nav-links">
+        <a href="#about">About</a>
+        <a href="#how">How it works</a>
+        <a href="#impact">Your impact</a>
+        <a href="#club">Our Club</a>
+        <a href="#faq">FAQ</a>
       </div>
+      <a href="#join" className="btn btn-gold nav-cta">Join the Scheme</a>
     </nav>
   );
 }

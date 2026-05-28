@@ -11,9 +11,9 @@ function getStripe() {
 }
 
 export async function POST(req: NextRequest) {
-  const { plan } = await req.json();
+  const { plan, email } = await req.json();
 
-  if (plan !== "monthly" && plan !== "annual") {
+  if (plan !== "monthly" && plan !== "yearly") {
     return NextResponse.json({ error: "Invalid plan" }, { status: 400 });
   }
 
@@ -22,6 +22,7 @@ export async function POST(req: NextRequest) {
 
   const session = await stripe.checkout.sessions.create({
     mode: plan === "monthly" ? "subscription" : "payment",
+    customer_email: email || undefined,
     line_items: [
       {
         price_data:
