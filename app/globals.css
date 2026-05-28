@@ -110,6 +110,7 @@ section { position: relative; }
 .nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
+  background: var(--paper);
   padding: 14px 28px; transition: background .3s ease, box-shadow .3s ease, padding .3s ease;
 }
 .nav.scrolled { background: rgba(251,249,243,.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); padding: 9px 28px; }
