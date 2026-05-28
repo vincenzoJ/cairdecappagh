@@ -13,9 +13,9 @@ export default function HowItWorks() {
         <Reveal>
           <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
             <span className="eyebrow center">How it works</span>
-            <h2 className="sec-title" style={{ maxWidth: "20ch", margin: "18px auto 0" }}>Simple to join. Built to last.</h2>
+            <h2 className="sec-title" style={{ maxWidth: "20ch", margin: "18px auto 0" }}>How Cairde Cappagh works.</h2>
             <p className="lead" style={{ marginTop: 18, maxWidth: "60ch", margin: "18px auto 0" }}>
-              Members agree to support the Club in a way that works for them. There is no pressure to join — Cairde Cappagh is for those who believe in what we are building.
+              Members agree to support the Club in a way that works for them.
             </p>
           </div>
         </Reveal>

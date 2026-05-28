@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 type Plan = "monthly" | "yearly";
 
 const PLANS = {
-  monthly: { name: "Monthly", amt: "£20", per: "/ month", note: "£240 per year · Direct Debit", badge: "Most popular" },
+  monthly: { name: "Monthly", amt: "£20", per: "/ month", note: "£240 per year · Direct Debit", badge: "" },
   yearly: { name: "Yearly", amt: "£240", per: "/ year", note: "A single annual payment", badge: "Save the admin" },
 };
 
@@ -14,7 +14,6 @@ const PERKS = [
   { b: "100% to development", s: "Your money funds coaching and facilities, never running costs." },
   { b: "No pressure, ever", s: "Cancel or change your support whenever you wish." },
   { b: "Official club apparel", s: "A small token of appreciation for every member." },
-  { b: "Secure payments", s: "Card details are processed securely by Stripe." },
 ];
 
 export default function Donate() {
@@ -49,7 +48,7 @@ export default function Donate() {
             <span className="eyebrow center">Become a Friend of Cappagh</span>
             <h2 className="sec-title" style={{ maxWidth: "20ch", margin: "18px auto 0" }}>Join Cairde Cappagh</h2>
             <p className="lead" style={{ marginTop: 18, maxWidth: "60ch", margin: "18px auto 0" }}>
-              Set up your support in under a minute. Choose the plan that suits you — every contribution goes straight into the future of our Club.
+              Choose the plan that suits you — every contribution goes straight into the future of our Club.
             </p>
           </div>
         </Reveal>
@@ -92,7 +91,7 @@ export default function Donate() {
                   >
                     <span className="pl-radio" />
                     <div className="pl-name">{v.name}</div>
-                    <span className="pl-badge">{v.badge}</span>
+                    {v.badge && <span className="pl-badge">{v.badge}</span>}
                     <div className="pl-amt">{v.amt}<small> {v.per}</small></div>
                     <div className="pl-note">{v.note}</div>
                   </button>
