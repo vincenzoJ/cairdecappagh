@@ -5,8 +5,8 @@ export default function Hero() {
     <header id="top" className="hero hero-split">
       <div className="hero-bg"><div className="rays" /></div>
       <div className="hero-vignette" />
-      <div className="wrap hero-split-grid">
-        <div>
+      <div className="wrap hero-split-grid" style={{ paddingTop: 40, paddingBottom: 120 }}>
+        <div style={{ minWidth: 0 }}>
           <div className="hero-motto">
             <span className="motto-ga">Ní neart go cur le chéile</span>
             <span className="motto-en">There is no strength without unity</span>
@@ -26,9 +26,9 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="hero-visual">
+        <div className="hero-visual" style={{ alignSelf: "start", marginTop: 25 }}>
           <Image
-            src="/cc-shield.png"
+            src="/cc-removebg-preview.png"
             alt="Cairde Cappagh crest"
             width={440}
             height={520}

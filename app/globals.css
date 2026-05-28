@@ -183,12 +183,13 @@ section { position: relative; }
 .hero-stats .st span { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); }
 
 /* split layout */
-.hero-split-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 50px; align-items: center; padding: 104px 0 96px; }
+.hero-split-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 50px; align-items: center; padding: 60px 0 96px; }
 .hero-split .hero-shield { height: min(440px, 46vw); margin: 0 auto; }
+.hero-split .hero-visual { align-self: start; }
 .hero-split .hero-cta { margin-top: 34px; }
 .hero-split .hero-sub { margin-top: 22px; }
 
-@media (max-width: 880px) {
+@media (max-width: 1024px) {
   .hero-split-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; padding: 60px 0 52px; }
   .hero-split .hero-cta { justify-content: center; }
   .hero-split .hero-sub { margin-left: auto; margin-right: auto; }
