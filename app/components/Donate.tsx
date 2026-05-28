@@ -19,25 +19,18 @@ const PERKS = [
 
 export default function Donate() {
   const [plan, setPlan] = useState<Plan>("monthly");
-  const [email, setEmail] = useState("");
-  const [emailErr, setEmailErr] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setEmailErr("Enter a valid email address.");
-      return;
-    }
-    setEmailErr("");
     setLoading(true);
     setError(null);
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, email }),
+        body: JSON.stringify({ plan }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
@@ -105,30 +98,10 @@ export default function Donate() {
                   </button>
                 ))}
               </div>
-              <div className="field">
-                <label htmlFor="email">Email address</label>
-                <input
-                  id="email"
-                  className="inp"
-                  type="email"
-                  placeholder="you@example.com"
-                  inputMode="email"
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); if (emailErr) setEmailErr(""); }}
-                />
-                {emailErr && <div className="errmsg">⚠ {emailErr}</div>}
-              </div>
               {error && <div className="errmsg" style={{ marginTop: 12 }}>⚠ {error}</div>}
               <button type="submit" className="btn btn-gold pay-btn" disabled={loading}>
                 {loading ? "Redirecting…" : plan === "monthly" ? "Subscribe · £20 / month" : "Pay £240 now"}
               </button>
-              <div className="secured">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="4" y="10" width="16" height="11" rx="2" />
-                  <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-                </svg>
-                Secured by Stripe · 256-bit encryption
-              </div>
             </form>
           </Reveal>
         </div>

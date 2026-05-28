@@ -19,7 +19,7 @@ export default function FAQ() {
         <Reveal>
           <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
             <span className="eyebrow center">Questions &amp; answers</span>
-            <h2 className="sec-title" style={{ maxWidth: "20ch", margin: "18px auto 0" }}>The honest answers</h2>
+            <h2 className="sec-title" style={{ maxWidth: "20ch", margin: "18px auto 0" }}>Your questions answered</h2>
             <p className="lead" style={{ marginTop: 18, maxWidth: "60ch", margin: "18px auto 0" }}>
               Everything you might be wondering about the Scheme, straight from the Club.
             </p>
