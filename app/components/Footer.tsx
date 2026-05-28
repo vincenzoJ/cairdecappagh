@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div className="footer-brand">
-            <Image src="/cc-crest.png" alt="Cairde Cappagh — Friends of Cappagh" width={84} height={100} style={{ height: 84, width: "auto" }} />
+            <Image src="/cc-removebg-preview.png" alt="Cairde Cappagh — Friends of Cappagh" width={84} height={100} style={{ height: 84, width: "auto" }} />
             <div className="footer-ga">Ní neart go cur le chéile</div>
             <div className="footer-en">There is no strength without unity</div>
           </div>
