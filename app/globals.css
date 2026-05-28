@@ -125,8 +125,13 @@ section { position: relative; }
 .nav-cta { padding: 11px 22px; font-size: 13px; }
 @media (max-width: 880px) {
   .nav-links { display: none; }
-  .nav-cta { display: none; }
+  .nav-cta { padding: 9px 16px; font-size: 12px; }
+  .nav-cta-full { display: none; }
+  .nav-cta-short { display: inline; }
   .nav-burger { display: flex; }
+}
+@media (min-width: 881px) {
+  .nav-cta-short { display: none; }
 }
 @media (max-width: 480px) { .nav-brand .bn span { display: none; } }
 

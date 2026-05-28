@@ -35,7 +35,10 @@ export default function Nav() {
         <a href="#club">Our Club</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a href="#join" className="btn btn-gold nav-cta">Join the Scheme</a>
+      <a href="#join" className="btn btn-gold nav-cta">
+        <span className="nav-cta-full">Join the Scheme</span>
+        <span className="nav-cta-short">Join</span>
+      </a>
       <button className="nav-burger" aria-label="Toggle menu" onClick={() => setOpen((o) => !o)}>
         <span /><span /><span />
       </button>
