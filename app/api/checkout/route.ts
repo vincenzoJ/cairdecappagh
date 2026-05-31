@@ -17,6 +17,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid plan" }, { status: 400 });
   }
 
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return NextResponse.json(
+      { error: "Online payments coming soon" },
+      { status: 503 }
+    );
+  }
+
   const stripe = getStripe();
   const origin = req.headers.get("origin") ?? "http://localhost:3000";
 
