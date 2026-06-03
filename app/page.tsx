@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
+    <main style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: "10vh" }}>
       <Image
         src="/cc-removebg-preview.png"
         alt="Cairde Cappagh crest"
