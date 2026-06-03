@@ -1,27 +1,17 @@
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-import WhatIs from "./components/WhatIs";
-import HowItWorks from "./components/HowItWorks";
-import MoneyGoes from "./components/MoneyGoes";
-import WhatWeDo from "./components/WhatWeDo";
-import FAQ from "./components/FAQ";
-import Donate from "./components/Donate";
-import Footer from "./components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <WhatIs />
-        <HowItWorks />
-        <MoneyGoes />
-        <WhatWeDo />
-        <FAQ />
-        <Donate />
-      </main>
-      <Footer />
-    </>
+    <main style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
+      <Image
+        src="/cc-removebg-preview.png"
+        alt="Cairde Cappagh crest"
+        width={440}
+        height={520}
+        style={{ height: "min(440px, 60vw)", width: "auto" }}
+        priority
+      />
+      <p style={{ marginTop: 24, fontSize: "1.5rem", fontWeight: 600 }}>Coming soon...</p>
+    </main>
   );
 }
